@@ -1,6 +1,2 @@
 
 
-[submodule "modules/google-cast"]
-    path = modules/google-cast
-    url = https://github.com/Farhan-Maqsood/Connect-SDK-iOS-Google-Cast.git
-    branch = main
