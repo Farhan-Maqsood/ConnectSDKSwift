@@ -19,7 +19,6 @@ DESC
   s.libraries = "z", "icucore"
   s.prefix_header_contents = <<-PREFIX
 #define CONNECT_SDK_VERSION @"#{s.version}"
-#ifdef CONNECT_SDK_ENABLE_LOG
 
 #ifndef kConnectSDKWirelessSSIDChanged
 #define kConnectSDKWirelessSSIDChanged @"Connect_SDK_Wireless_SSID_Changed"
