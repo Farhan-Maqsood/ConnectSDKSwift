@@ -24,6 +24,7 @@ DESC
 #define kConnectSDKWirelessSSIDChanged @"Connect_SDK_Wireless_SSID_Changed"
 #endif
 
+#ifdef CONNECT_SDK_ENABLE_LOG
   #ifdef DEBUG
     #define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
   #else
