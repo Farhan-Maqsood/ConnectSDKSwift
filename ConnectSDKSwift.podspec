@@ -35,6 +35,10 @@ Pod::Spec.new do |s|
                      :tag => s.version,
                      :submodules => true }
 
+s.prepare_command = <<-CMD
+  git submodule update --init --recursive
+CMD
+
   s.xcconfig = {
       "OTHER_LDFLAGS" => "$(inherited) -ObjC"
   }
