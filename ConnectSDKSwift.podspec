@@ -74,6 +74,13 @@ sp.preserve_paths = [
     'modules/firetv/Frameworks/Bolts.framework' 
 ]
 
+sp.xcconfig = {
+        'HEADER_SEARCH_PATHS' => [
+            '"${PODS_ROOT}/ConnectSDKSwift/modules/firetv/Frameworks/AmazonFling.framework/Headers"',
+            '"${PODS_ROOT}/ConnectSDKSwift/modules/firetv/Frameworks/Bolts.framework/Headers"'
+        ].join(' ')
+    }
+
   end
 
   # No ARC
