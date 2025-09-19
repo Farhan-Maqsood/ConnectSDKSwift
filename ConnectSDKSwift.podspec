@@ -40,55 +40,34 @@ DESC
     "core/Frameworks/asi-http-request/External/Reachability/*.{h,m}",
     "core/Frameworks/asi-http-request/Classes/*.{h,m}"
   ]
-
- # Core + FireTV
+# Core without FireTV
 s.subspec 'Core' do |sp|
   sp.source_files = [
     "ConnectSDKDefaultPlatforms.h",
-    "core/**/*.{h,m}",
-    "modules/firetv/*.{h,m}",
-    "modules/firetv/Capabilities/*.{h,m}",
-    "modules/firetv/Discovery/*.{h,m}"
+    "core/**/*.{h,m}"
   ]
 
   sp.exclude_files = non_arc_files + [
     "core/ConnectSDK*Tests/**/*",
-    "core/Frameworks/LGCast/**/*.h",
-    "modules/firetv/FireTVTests/**/*",
-    "modules/firetv/FireTVAcceptanceTests/*",
-    "modules/firetv/FireTVIntegrationTests/*",
-    # exclude the AmazonFling binary (problematic one)
-    "modules/firetv/Frameworks/AmazonFling.framework/AmazonFling",
-    "modules/firetv/Frameworks/AmazonFling.framework/Versions/**/*"
+    "core/Frameworks/LGCast/**/*.h"
   ]
 
   sp.private_header_files = "core/**/*_Private.h"
   sp.requires_arc = true
 
   sp.dependency 'ConnectSDKSwift/no-arc'
-  sp.dependency 'Bolts', '~> 1.9'
+  # sp.dependency 'Bolts', '~> 1.9'
 
   sp.ios.vendored_frameworks = [
     'core/Frameworks/LGCast/LGCast.xcframework',
     'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
   ]
 
-  # Keep only the AmazonFling headers/modules, not the binary
   sp.preserve_paths = [
     'core/Frameworks/LGCast/LGCast.xcframework',
-    'core/Frameworks/LGCast/GStreamerForLGCast.xcframework',
-    'modules/firetv/Frameworks/AmazonFling.framework/Headers',
-    'modules/firetv/Frameworks/AmazonFling.framework/Modules'
+    'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
   ]
-
-  sp.xcconfig = {
-    'HEADER_SEARCH_PATHS' => [
-      '"${PODS_ROOT}/ConnectSDKSwift/modules/firetv/Frameworks/AmazonFling.framework/Headers"',
-      '"${PODS_ROOT}/ConnectSDKSwift/modules/firetv/Frameworks/AmazonFling.framework/Modules"'
-    ].join(' ')
-  }
 end
-
 
   # No ARC
   s.subspec 'no-arc' do |sp|
