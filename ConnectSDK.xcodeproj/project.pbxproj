@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -26,6 +26,10 @@
 		0F446CC91A6D924D000BB1C0 /* MediaLaunchObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F446CC71A6D924D000BB1C0 /* MediaLaunchObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F446CCA1A6D924D000BB1C0 /* MediaLaunchObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F446CC81A6D924D000BB1C0 /* MediaLaunchObject.m */; };
 		146A7D1B1B2896C300260441 /* FireTVIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A7D1A1B2896C300260441 /* FireTVIntegrationTests.m */; };
+		182E8F942E7CE41B00C1620E /* GoogleCast.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E8F932E7CE41B00C1620E /* GoogleCast.xcframework */; };
+		182E8F952E7CE41B00C1620E /* GoogleCast.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E8F932E7CE41B00C1620E /* GoogleCast.xcframework */; };
+		182E8F962E7CE41B00C1620E /* GoogleCast.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E8F932E7CE41B00C1620E /* GoogleCast.xcframework */; };
+		182E8F972E7CE41B00C1620E /* GoogleCast.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182E8F932E7CE41B00C1620E /* GoogleCast.xcframework */; };
 		22D1EDBB282D0FBD00D74B56 /* WebOSTVService+LGCast.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D1EDA4282D0FBD00D74B56 /* WebOSTVService+LGCast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22D1EDBC282D0FBD00D74B56 /* ConnectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D1EDA5282D0FBD00D74B56 /* ConnectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22D1EDBD282D0FBD00D74B56 /* CameraSinkCapability.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D1EDA7282D0FBD00D74B56 /* CameraSinkCapability.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -60,7 +64,6 @@
 		44166C611B420C4E0052F9EC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA61EBEF18FE48E900D75696 /* SystemConfiguration.framework */; };
 		44166C621B420C550052F9EC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EF618E1A12E0A400CF344C /* libz.dylib */; };
 		44166C631B420C860052F9EC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA61EBF118FE48EF00D75696 /* MobileCoreServices.framework */; };
-		44166C641B420D960052F9EC /* GoogleCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4485140C1A02FC3200D66710 /* GoogleCast.framework */; };
 		44166C651B420DA60052F9EC /* AmazonFling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316EF31AF2EBF5000FE655 /* AmazonFling.framework */; };
 		44166C661B420DA60052F9EC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316EF41AF2EBF5000FE655 /* Bolts.framework */; };
 		44166C671B420DAD0052F9EC /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44316F051AF2F9AD000FE655 /* libc++.dylib */; };
@@ -96,7 +99,6 @@
 		44758BD11AE7070600EC43A6 /* airplay_playbackinfo_playing.json in Resources */ = {isa = PBXBuildFile; fileRef = 44758BCC1AE7070500EC43A6 /* airplay_playbackinfo_playing.json */; };
 		44758BD21AE7070600EC43A6 /* airplay_playbackinfo_rewind.json in Resources */ = {isa = PBXBuildFile; fileRef = 44758BCD1AE7070600EC43A6 /* airplay_playbackinfo_rewind.json */; };
 		44789D851B585525001D5098 /* RokuServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44789D841B585525001D5098 /* RokuServiceTests.m */; };
-		447F63411B14F35900699843 /* GoogleCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4485140C1A02FC3200D66710 /* GoogleCast.framework */; };
 		4480857F1A12A7BE00E13938 /* ConnectSDKDefaultPlatformsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4480857E1A12A7BE00E13938 /* ConnectSDKDefaultPlatformsTests.m */; };
 		448085801A12A7BE00E13938 /* libConnectSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA61EB1018FE485B00D75696 /* libConnectSDK.a */; };
 		448414F91AEB27F400124EE9 /* OCMStubRecorder+XCTestExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 448414F81AEB27F400124EE9 /* OCMStubRecorder+XCTestExpectation.m */; };
@@ -200,7 +202,6 @@
 		44EF618D1A12E02700CF344C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA61EBF118FE48EF00D75696 /* MobileCoreServices.framework */; };
 		44EF618F1A12E0A400CF344C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EF618E1A12E0A400CF344C /* libz.dylib */; };
 		44EF61921A12E10500CF344C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA61EBEF18FE48E900D75696 /* SystemConfiguration.framework */; };
-		44EF61951A12E18D00CF344C /* GoogleCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4485140C1A02FC3200D66710 /* GoogleCast.framework */; };
 		44EF61981A12E1C800CF344C /* MediaAccessibility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EF61971A12E1C800CF344C /* MediaAccessibility.framework */; };
 		44EF619B1A12E23200CF344C /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EF619A1A12E23200CF344C /* libicucore.dylib */; };
 		44EF61A41A12FC8800CF344C /* SSDPDiscoveryProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EF61A31A12FC8800CF344C /* SSDPDiscoveryProviderTests.m */; };
@@ -435,6 +436,7 @@
 		0F446CC71A6D924D000BB1C0 /* MediaLaunchObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaLaunchObject.h; sourceTree = "<group>"; };
 		0F446CC81A6D924D000BB1C0 /* MediaLaunchObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaLaunchObject.m; sourceTree = "<group>"; };
 		146A7D1A1B2896C300260441 /* FireTVIntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireTVIntegrationTests.m; sourceTree = "<group>"; };
+		182E8F932E7CE41B00C1620E /* GoogleCast.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleCast.xcframework; sourceTree = "<group>"; };
 		22D1EDA4282D0FBD00D74B56 /* WebOSTVService+LGCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebOSTVService+LGCast.h"; sourceTree = "<group>"; };
 		22D1EDA5282D0FBD00D74B56 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
 		22D1EDA7282D0FBD00D74B56 /* CameraSinkCapability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSinkCapability.h; sourceTree = "<group>"; };
@@ -501,7 +503,6 @@
 		4480857E1A12A7BE00E13938 /* ConnectSDKDefaultPlatformsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectSDKDefaultPlatformsTests.m; sourceTree = "<group>"; };
 		448414F71AEB27F400124EE9 /* OCMStubRecorder+XCTestExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCMStubRecorder+XCTestExpectation.h"; sourceTree = "<group>"; };
 		448414F81AEB27F400124EE9 /* OCMStubRecorder+XCTestExpectation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCMStubRecorder+XCTestExpectation.m"; sourceTree = "<group>"; };
-		4485140C1A02FC3200D66710 /* GoogleCast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleCast.framework; sourceTree = "<group>"; };
 		448B28691B03DAEA00DFF18F /* OCMArg+ArgumentCaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCMArg+ArgumentCaptor.h"; sourceTree = "<group>"; };
 		448B286A1B03DAEA00DFF18F /* OCMArg+ArgumentCaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCMArg+ArgumentCaptor.m"; sourceTree = "<group>"; };
 		448B286D1B041A3A00DFF18F /* FireTVMediaControlTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireTVMediaControlTests.m; sourceTree = "<group>"; };
@@ -802,7 +803,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44166C641B420D960052F9EC /* GoogleCast.framework in Frameworks */,
 				44166C601B420C2D0052F9EC /* OCMock.framework in Frameworks */,
 				44166C631B420C860052F9EC /* MobileCoreServices.framework in Frameworks */,
 				44166C611B420C4E0052F9EC /* SystemConfiguration.framework in Frameworks */,
@@ -811,6 +811,7 @@
 				44166C661B420DA60052F9EC /* Bolts.framework in Frameworks */,
 				44166C5F1B420C270052F9EC /* Specta.framework in Frameworks */,
 				44166C671B420DAD0052F9EC /* libc++.dylib in Frameworks */,
+				182E8F952E7CE41B00C1620E /* GoogleCast.xcframework in Frameworks */,
 				44166C5E1B420C270052F9EC /* Expecta.framework in Frameworks */,
 				44166C691B420DC20052F9EC /* libicucore.dylib in Frameworks */,
 				44166C651B420DA60052F9EC /* AmazonFling.framework in Frameworks */,
@@ -828,9 +829,9 @@
 				44E98F5F1B1E63570043BC70 /* OCMock.framework in Frameworks */,
 				448085801A12A7BE00E13938 /* libConnectSDK.a in Frameworks */,
 				44316F031AF2F77C000FE655 /* AmazonFling.framework in Frameworks */,
-				44EF61951A12E18D00CF344C /* GoogleCast.framework in Frameworks */,
 				44EF61981A12E1C800CF344C /* MediaAccessibility.framework in Frameworks */,
 				44EF618D1A12E02700CF344C /* MobileCoreServices.framework in Frameworks */,
+				182E8F962E7CE41B00C1620E /* GoogleCast.xcframework in Frameworks */,
 				44EF61921A12E10500CF344C /* SystemConfiguration.framework in Frameworks */,
 				44316F041AF2F936000FE655 /* Bolts.framework in Frameworks */,
 				44EF619B1A12E23200CF344C /* libicucore.dylib in Frameworks */,
@@ -850,9 +851,9 @@
 				449A37081B0FDC1C00E47DAC /* libConnectSDK.a in Frameworks */,
 				449A37191B0FE37B00E47DAC /* libc++.dylib in Frameworks */,
 				449A37131B0FE03400E47DAC /* Specta.framework in Frameworks */,
-				447F63411B14F35900699843 /* GoogleCast.framework in Frameworks */,
 				449A371A1B0FE38700E47DAC /* SystemConfiguration.framework in Frameworks */,
 				449A371B1B0FE39700E47DAC /* AdSupport.framework in Frameworks */,
+				182E8F942E7CE41B00C1620E /* GoogleCast.xcframework in Frameworks */,
 				449A37121B0FE03400E47DAC /* Expecta.framework in Frameworks */,
 				449A371C1B0FE3A500E47DAC /* MobileCoreServices.framework in Frameworks */,
 				449A37171B0FE36E00E47DAC /* Bolts.framework in Frameworks */,
@@ -865,6 +866,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD7F8601906E99C00B33AAB /* UIKit.framework in Frameworks */,
+				182E8F972E7CE41B00C1620E /* GoogleCast.xcframework in Frameworks */,
 				EAD7F85E1906E98200B33AAB /* AVFoundation.framework in Frameworks */,
 				EA61EBF218FE48EF00D75696 /* MobileCoreServices.framework in Frameworks */,
 				EA61EBF018FE48E900D75696 /* SystemConfiguration.framework in Frameworks */,
@@ -1721,8 +1723,8 @@
 		EA5FB85A199AEC550057B4B4 /* google-cast */ = {
 			isa = PBXGroup;
 			children = (
+				182E8F932E7CE41B00C1620E /* GoogleCast.xcframework */,
 				44B43AFD1B61A46A004083E5 /* GoogleCastTests */,
-				4485140C1A02FC3200D66710 /* GoogleCast.framework */,
 				EA5FB85C199AEC550057B4B4 /* CastDiscoveryProvider.h */,
 				EA5FB85D199AEC550057B4B4 /* CastDiscoveryProvider.m */,
 				EA5FB85E199AEC550057B4B4 /* CastService.h */,
@@ -2343,7 +2345,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DCC373B8FD;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -2385,7 +2387,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DCC373B8FD;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -2421,7 +2423,7 @@
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DCC373B8FD;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -2460,7 +2462,7 @@
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DCC373B8FD;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -2496,7 +2498,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DCC373B8FD;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2539,7 +2541,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DCC373B8FD;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
