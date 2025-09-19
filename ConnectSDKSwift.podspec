@@ -20,6 +20,11 @@ DESC
   s.prefix_header_contents = <<-PREFIX
 #define CONNECT_SDK_VERSION @"#{s.version}"
 #ifdef CONNECT_SDK_ENABLE_LOG
+
+#ifndef kConnectSDKWirelessSSIDChanged
+#define kConnectSDKWirelessSSIDChanged @"Connect_SDK_Wireless_SSID_Changed"
+#endif
+
   #ifdef DEBUG
     #define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
   #else
