@@ -47,7 +47,11 @@ DESC
     "core/**/*.{h,m}",
     "modules/firetv/*.{h,m}",
     "modules/firetv/Capabilities/*.{h,m}",
-    "modules/firetv/Discovery/*.{h,m}"
+    "modules/firetv/Discovery/*.{h,m}",
+    "modules/firetv/Frameworks/AmazonFling.framework/Headers/*",
+    "modules/firetv/Frameworks/AmazonFling.framework/Modules/*",
+    "modules/firetv/Frameworks/Bolts.framework/Modules/*",
+    "modules/firetv/Frameworks/Bolts.framework/Headers/*"
   ]
     sp.exclude_files = non_arc_files + [
     "core/ConnectSDK*Tests/**/*",
@@ -55,7 +59,9 @@ DESC
     "modules/firetv/FireTVTests/**/*",
     "modules/firetv/FireTVAcceptanceTests/*",
     "modules/firetv/FireTVIntegrationTests/*",
-    "modules/firetv/Frameworks/**/*"
+    "modules/firetv/Frameworks/AmazonFling.framework/Versions/*",
+    "modules/firetv/Frameworks/AmazonFling.framework/AmazonFling",
+    "modules/firetv/Frameworks/Bolts.framework/Bolts"
   ]
     sp.private_header_files = "core/**/*_Private.h"
     sp.requires_arc = true
@@ -73,13 +79,6 @@ sp.preserve_paths = [
     'modules/firetv/Frameworks/AmazonFling.framework',
     'modules/firetv/Frameworks/Bolts.framework' 
 ]
-
-sp.xcconfig = {
-        'HEADER_SEARCH_PATHS' => [
-            '"${PODS_ROOT}/ConnectSDKSwift/modules/firetv/Frameworks/AmazonFling.framework/Headers"',
-            '"${PODS_ROOT}/ConnectSDKSwift/modules/firetv/Frameworks/Bolts.framework/Headers"'
-        ].join(' ')
-    }
 
   end
 
