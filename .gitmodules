@@ -1,3 +1,9 @@
 [submodule "core"]
 	path = core
 	url = https://github.com/ConnectSDK/Connect-SDK-iOS-Core.git
+[submodule "modules/firetv"]
+	path = modules/firetv
+	url = https://github.com/ConnectSDK/Connect-SDK-iOS-FireTV.git
+[submodule "modules/google-cast"]
+	path = modules/google-cast
+	url = https://github.com/ConnectSDK/Connect-SDK-iOS-Google-Cast.git
