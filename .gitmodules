@@ -1,8 +1,4 @@
 
-[submodule "modules/firetv"]
-    path = modules/firetv
-    url = https://github.com/Farhan-Maqsood/Connect-SDK-iOS-FireTV.git
-    branch = main
 
 [submodule "modules/google-cast"]
     path = modules/google-cast
