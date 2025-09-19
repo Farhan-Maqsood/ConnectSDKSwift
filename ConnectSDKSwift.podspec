@@ -43,43 +43,38 @@ DESC
   # Core + FireTV
   s.subspec 'Core' do |sp|
     sp.source_files = [
-    "ConnectSDKDefaultPlatforms.h",
-    "core/**/*.{h,m}",
-    "modules/firetv/*.{h,m}",
-    "modules/firetv/Capabilities/*.{h,m}",
-    "modules/firetv/Discovery/*.{h,m}",
-    "modules/firetv/Frameworks/AmazonFling.framework/Headers/*",
-    "modules/firetv/Frameworks/AmazonFling.framework/Modules/*",
-    "modules/firetv/Frameworks/Bolts.framework/Modules/*",
-    "modules/firetv/Frameworks/Bolts.framework/Headers/*"
-  ]
+      "ConnectSDKDefaultPlatforms.h",
+      "core/**/*.{h,m}",
+      "modules/firetv/*.{h,m}",
+      "modules/firetv/Capabilities/*.{h,m}",
+      "modules/firetv/Discovery/*.{h,m}"
+    ]
+
     sp.exclude_files = non_arc_files + [
-    "core/ConnectSDK*Tests/**/*",
-    "core/Frameworks/LGCast/**/*.h",
-    "modules/firetv/FireTVTests/**/*",
-    "modules/firetv/FireTVAcceptanceTests/*",
-    "modules/firetv/FireTVIntegrationTests/*",
-    "modules/firetv/Frameworks/AmazonFling.framework/Versions/*",
-    "modules/firetv/Frameworks/AmazonFling.framework/AmazonFling",
-    "modules/firetv/Frameworks/Bolts.framework/Bolts"
-  ]
+      "core/ConnectSDK*Tests/**/*",
+      "core/Frameworks/LGCast/**/*.h",
+      "modules/firetv/FireTVTests/**/*",
+      "modules/firetv/FireTVAcceptanceTests/*",
+      "modules/firetv/FireTVIntegrationTests/*"
+    ]
+
     sp.private_header_files = "core/**/*_Private.h"
     sp.requires_arc = true
 
     sp.dependency 'ConnectSDKSwift/no-arc'
-    sp.ios.vendored_frameworks = [
-  'core/Frameworks/LGCast/LGCast.xcframework',
-  'core/Frameworks/LGCast/GStreamerForLGCast.xcframework',
-    'modules/firetv/Frameworks/AmazonFling.framework',
-    'modules/firetv/Frameworks/Bolts.framework' 
-]
-sp.preserve_paths = [
-  'core/Frameworks/LGCast/LGCast.xcframework',
-  'core/Frameworks/LGCast/GStreamerForLGCast.xcframework',
-    'modules/firetv/Frameworks/AmazonFling.framework',
-    'modules/firetv/Frameworks/Bolts.framework' 
-]
+    sp.dependency 'Bolts', '~> 1.9'
 
+    sp.ios.vendored_frameworks = [
+      'core/Frameworks/LGCast/LGCast.xcframework',
+      'core/Frameworks/LGCast/GStreamerForLGCast.xcframework',
+      'modules/firetv/Frameworks/AmazonFling.framework'
+    ]
+
+    sp.preserve_paths = [
+      'core/Frameworks/LGCast/LGCast.xcframework',
+      'core/Frameworks/LGCast/GStreamerForLGCast.xcframework',
+      'modules/firetv/Frameworks/AmazonFling.framework'
+    ]
   end
 
   # No ARC
