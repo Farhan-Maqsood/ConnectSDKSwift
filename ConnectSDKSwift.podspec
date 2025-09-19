@@ -10,8 +10,8 @@ DESC
   s.homepage     = "http://www.connectsdk.com/"
   s.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
   s.author       = { "Connect SDK" => "support@connectsdk.com" }
-  s.platform     = :ios, "11.0"
-  s.ios.deployment_target = "11.0"
+  s.platform     = :ios, "14.0"
+  s.ios.deployment_target = "14.0"
   s.source       = { :git => "https://github.com/Farhan-Maqsood/ConnectSDKSwift.git", :tag => s.version }
 
   s.xcconfig = { "OTHER_LDFLAGS" => "$(inherited) -ObjC" }
