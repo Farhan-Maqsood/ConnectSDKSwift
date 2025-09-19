@@ -9,7 +9,7 @@
 # cannot include its support in a subspec in an automated way.
 
 Pod::Spec.new do |s|
-  s.name         = "ConnectSDK"
+  s.name         = "ConnectSDKSwift"
   s.version      = "1.0.0"
   s.summary      = "Connect SDK is an open source framework that connects your mobile apps with multiple TV platforms."
 
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/ConnectSDK"
   s.platform     = :ios, "11.0"
   s.ios.deployment_target = "11.0"
-  s.source       = { :git => "https://github.com/ConnectSDK/Connect-SDK-iOS.git",
+  s.source       = { :git => "https://github.com/Farhan-Maqsood/ConnectSDKSwift.git",
                      :tag => s.version,
                      :submodules => true }
 
@@ -93,7 +93,7 @@ Pod::Spec.new do |s|
     sp.private_header_files = "core/**/*_Private.h"
     sp.requires_arc = true
 
-    sp.dependency 'ConnectSDK/no-arc'
+    sp.dependency 'ConnectSDKSwift/no-arc'
     sp.ios.vendored_frameworks = 'core/Frameworks/LGCast/LGCast.xcframework', 'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
     sp.preserve_paths =  'core/Frameworks/LGCast/LGCast.xcframework', 'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
   end
@@ -108,7 +108,7 @@ Pod::Spec.new do |s|
   s.subspec 'GoogleCast' do |sp|
     cast_dir = "modules/google-cast"
 
-    sp.dependency 'ConnectSDK/Core'
+    sp.dependency 'ConnectSDKSwift/Core'
     sp.source_files = "#{cast_dir}/**/*.{h,m}"
     sp.exclude_files = "#{cast_dir}/*Tests/**/*"
     sp.private_header_files = "#{cast_dir}/**/*_Private.h"
