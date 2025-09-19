@@ -1,9 +1,14 @@
 [submodule "core"]
-	path = core
-url=https://github.com/Farhan-Maqsood/Connect-SDK-iOS-Core.git
+    path = core
+    url = https://github.com/Farhan-Maqsood/Connect-SDK-iOS-Core.git
+    branch = main
+
 [submodule "modules/firetv"]
-	path = modules/firetv
-url=https://github.com/Farhan-Maqsood/Connect-SDK-iOS-FireTV.git
+    path = modules/firetv
+    url = https://github.com/Farhan-Maqsood/Connect-SDK-iOS-FireTV.git
+    branch = main
+
 [submodule "modules/google-cast"]
-	path = modules/google-cast
-url=https://github.com/Farhan-Maqsood/Connect-SDK-iOS-Google-Cast.git
+    path = modules/google-cast
+    url = https://github.com/Farhan-Maqsood/Connect-SDK-iOS-Google-Cast.git
+    branch = main
