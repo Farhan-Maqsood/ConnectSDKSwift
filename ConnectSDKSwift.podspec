@@ -56,7 +56,9 @@ DESC
       "core/Frameworks/LGCast/**/*.h",
       "modules/firetv/FireTVTests/**/*",
       "modules/firetv/FireTVAcceptanceTests/*",
-      "modules/firetv/FireTVIntegrationTests/*"
+      "modules/firetv/FireTVIntegrationTests/*",
+      "modules/firetv/Frameworks/AmazonFling.framework/Versions/*",
+      "modules/firetv/Frameworks/AmazonFling.framework/AmazonFling"
     ]
 
     sp.private_header_files = "core/**/*_Private.h"
@@ -64,7 +66,6 @@ DESC
 
     sp.dependency 'ConnectSDKSwift/no-arc'
     sp.dependency 'Bolts', '~> 1.9'
-    sp.dependency 'AmazonFling', '~> 1.3'
 
     sp.ios.vendored_frameworks = [
       'core/Frameworks/LGCast/LGCast.xcframework',
@@ -73,8 +74,17 @@ DESC
 
     sp.preserve_paths = [
       'core/Frameworks/LGCast/LGCast.xcframework',
-      'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
+      'core/Frameworks/LGCast/GStreamerForLGCast.xcframework',
+      'modules/firetv/Frameworks/AmazonFling.framework/Headers',
+    'modules/firetv/Frameworks/AmazonFling.framework/Modules'
     ]
+
+sp.xcconfig = {
+    'HEADER_SEARCH_PATHS' => [
+      '"${PODS_ROOT}/ConnectSDKSwift/modules/firetv/Frameworks/AmazonFling.framework/Headers"'
+    ].join(' ')
+  }
+
   end
 
   # No ARC
