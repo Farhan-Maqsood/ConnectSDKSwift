@@ -65,7 +65,7 @@ sp.preserve_paths = [
   s.subspec 'GoogleCast' do |sp|
     cast_dir = "modules/google-cast"
     sp.dependency 'ConnectSDKSwift/Core'
-    sp.source_files = "#{cast_dir}/**/*.{h,m}"
+    sp.source_files = "#{cast_dir}/*.{h,m}"
     sp.exclude_files = "#{cast_dir}/*Tests/**/*"
     sp.private_header_files = "#{cast_dir}/**/*_Private.h"
     sp.dependency "google-cast-sdk", "2.7.1"
