@@ -43,7 +43,17 @@ DESC
   # Core + FireTV
   s.subspec 'Core' do |sp|
     sp.source_files  = "ConnectSDKDefaultPlatforms.h", "core/**/*.{h,m}", "modules/firetv/**/*.{h,m}"
-    sp.exclude_files = (non_arc_files + ["core/ConnectSDK*Tests/**/*", "core/Frameworks/LGCast/**/*.h", "modules/firetv/FireTVTests/**/*", "modules/firetv/FireTVAcceptanceTests/*", "modules/firetv/FireTVIntegrationTests/*", "modules/firetv/Frameworks/AmazonFling.framework/**/*.h", "modules/firetv/Frameworks/Bolts.framework/**/*.h"])
+    sp.exclude_files = (non_arc_files + ["core/ConnectSDK*Tests/**/*", 
+					"core/Frameworks/LGCast/**/*.h",
+ 					"modules/firetv/FireTVTests/**/*", 
+					"modules/firetv/FireTVAcceptanceTests/*", 
+					"modules/firetv/FireTVIntegrationTests/*", 
+					"modules/firetv/Frameworks/AmazonFling.framework/**/*.h", 
+					"modules/firetv/Frameworks/AmazonFling.framework/AmazonFling",
+					"modules/firetv/Frameworks/AmazonFling.framework/Versions/A/AmazonFling",
+					"modules/firetv/Frameworks/AmazonFling.framework/Versions/Current/AmazonFling",
+					"modules/firetv/Frameworks/Bolts.framework/**/*.h", 
+					"modules/firetv/Frameworks/Bolts.framework/Bolts"])
     sp.private_header_files = "core/**/*_Private.h"
     sp.requires_arc = true
 
