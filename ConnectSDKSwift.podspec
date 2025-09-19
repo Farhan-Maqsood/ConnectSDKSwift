@@ -17,6 +17,7 @@ DESC
   s.xcconfig = { "OTHER_LDFLAGS" => "$(inherited) -ObjC" }
   s.requires_arc = true
   s.libraries = "z", "icucore"
+
   s.prefix_header_contents = <<-PREFIX
 #define CONNECT_SDK_VERSION @"#{s.version}"
 
@@ -55,7 +56,9 @@ DESC
       "core/Frameworks/LGCast/**/*.h",
       "modules/firetv/FireTVTests/**/*",
       "modules/firetv/FireTVAcceptanceTests/*",
-      "modules/firetv/FireTVIntegrationTests/*"
+      "modules/firetv/FireTVIntegrationTests/*",
+      "modules/firetv/Frameworks/AmazonFling.framework/Versions/*",
+      "modules/firetv/Frameworks/AmazonFling.framework/AmazonFling"
     ]
 
     sp.private_header_files = "core/**/*_Private.h"
