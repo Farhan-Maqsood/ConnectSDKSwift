@@ -37,7 +37,7 @@ DESC
 
   # Core + FireTV
   s.subspec 'Core' do |sp|
-    sp.source_files  = "ConnectSDKDefaultPlatforms.h", "core/**/*.{h,m}", "modules/firetv/**/*.{h,m}", "modules/google-cast/**/*.{h,m}"
+    sp.source_files  = "ConnectSDKDefaultPlatforms.h", "core/**/*.{h,m}", "modules/firetv/**/*.{h,m}"
     sp.exclude_files = (non_arc_files + ["core/ConnectSDK*Tests/**/*", "core/Frameworks/LGCast/**/*.h"])
     sp.private_header_files = "core/**/*_Private.h"
     sp.requires_arc = true
@@ -61,7 +61,7 @@ sp.preserve_paths = [
     sp.compiler_flags = '-w'
   end
 
-  # GoogleCast
+  # GoogleCast (official CocoaPod)
   s.subspec 'GoogleCast' do |sp|
     cast_dir = "modules/google-cast"
     sp.dependency 'ConnectSDKSwift/Core'
