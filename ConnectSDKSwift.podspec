@@ -45,11 +45,15 @@ DESC
     sp.dependency 'ConnectSDKSwift/no-arc'
     sp.ios.vendored_frameworks = [
   'core/Frameworks/LGCast/LGCast.xcframework',
-  'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
+  'core/Frameworks/LGCast/GStreamerForLGCast.xcframework',
+    'modules/firetv/Frameworks/AmazonFling.framework',
+    'modules/firetv/Frameworks/Bolts.framework' 
 ]
 sp.preserve_paths = [
   'core/Frameworks/LGCast/LGCast.xcframework',
-  'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
+  'core/Frameworks/LGCast/GStreamerForLGCast.xcframework',
+    'modules/firetv/Frameworks/AmazonFling.framework',
+    'modules/firetv/Frameworks/Bolts.framework' 
 ]
 
   end
