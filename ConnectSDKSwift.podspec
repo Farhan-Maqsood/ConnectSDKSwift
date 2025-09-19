@@ -56,9 +56,7 @@ DESC
       "core/Frameworks/LGCast/**/*.h",
       "modules/firetv/FireTVTests/**/*",
       "modules/firetv/FireTVAcceptanceTests/*",
-      "modules/firetv/FireTVIntegrationTests/*",
-      "modules/firetv/Frameworks/AmazonFling.framework/Versions/*",
-      "modules/firetv/Frameworks/AmazonFling.framework/AmazonFling"
+      "modules/firetv/FireTVIntegrationTests/*"
     ]
 
     sp.private_header_files = "core/**/*_Private.h"
@@ -66,17 +64,16 @@ DESC
 
     sp.dependency 'ConnectSDKSwift/no-arc'
     sp.dependency 'Bolts', '~> 1.9'
+    sp.dependency 'AmazonFling', '~> 1.3'
 
     sp.ios.vendored_frameworks = [
       'core/Frameworks/LGCast/LGCast.xcframework',
-      'core/Frameworks/LGCast/GStreamerForLGCast.xcframework',
-      'modules/firetv/Frameworks/AmazonFling.framework'
+      'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
     ]
 
     sp.preserve_paths = [
       'core/Frameworks/LGCast/LGCast.xcframework',
-      'core/Frameworks/LGCast/GStreamerForLGCast.xcframework',
-      'modules/firetv/Frameworks/AmazonFling.framework'
+      'core/Frameworks/LGCast/GStreamerForLGCast.xcframework'
     ]
   end
 
