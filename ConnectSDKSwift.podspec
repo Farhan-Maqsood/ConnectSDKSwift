@@ -36,9 +36,17 @@ Pod::Spec.new do |s|
                      :submodules => true }
 
 s.prepare_command = <<-CMD
-  git submodule update --init --recursive
+  pwd
+  ls -la
+  # Check if the .gitmodules file exists, which is crucial
+  if [ -f ".gitmodules" ]; then
+    echo "Found .gitmodules, initializing submodules..."
+    git submodule update --init --recursive --force
+  else
+    echo "ERROR: .gitmodules file not found! Cannot fetch submodules."
+    exit 1
+  fi
 CMD
-
   s.xcconfig = {
       "OTHER_LDFLAGS" => "$(inherited) -ObjC"
   }
