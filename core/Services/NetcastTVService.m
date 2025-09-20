@@ -352,9 +352,35 @@ NSString *lgeUDAPRequestURI[8] = {
     NSString *ok = [[NSBundle mainBundle] localizedStringForKey:@"Connect_SDK_Pair_OK" value:@"OK" table:@"ConnectSDK"];
     NSString *cancel = [[NSBundle mainBundle] localizedStringForKey:@"Connect_SDK_Pair_Cancel" value:@"Cancel" table:@"ConnectSDK"];
 
-    _pairingAlert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancel otherButtonTitles:ok, nil];
-    _pairingAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [_pairingAlert show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.keyboardType = UIKeyboardTypeNumberPad;
+    }];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancel
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissPairingWithSuccess:nil failure:nil];
+    }];
+
+    UIAlertAction *okAction = [Uv                               style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {
+        NSString *pairingCode = alert.textFields.firstObject.text;
+        [self pairWithData:pairingCode];
+    }];
+
+    [alert addAction:cancelAction];
+    [alert addAction:okAction];
+
+    // Present alert from root view controller
+    UIViewController *rootVC = UIApplication.sharedApplication.keyWindow.rootViewController;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [rootVC presentViewController:alert animated:YES completion:nil];
+    });
+
 }
 
 - (void)willPresentAlertView:(UIAlertView *)alertView
