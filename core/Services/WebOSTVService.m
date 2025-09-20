@@ -1999,7 +1999,7 @@
     __block ServiceSubscription *subscription = [self.socket addSubscribe:URL payload:payload success:^(NSDictionary *responseDict)
                                          {
                                              if([responseDict valueForKey:@"pairingType"]){
-                                                [weakSelf showPinAlertWithTitle:@"Pin Web App" andMessage:@"Please confirm on your device"];
+                                                [weakSelf showAlertWithTitle:@"Pin Web App" andMessage:@"Please confirm on your device"];
                                              }
                                              else
                                              {
@@ -2034,7 +2034,7 @@
     __block ServiceSubscription *subscription = [self.socket addSubscribe:URL payload:payload success:^(NSDictionary *responseDict)
                                          {
                                              if([responseDict valueForKey:@"pairingType"]){
-                                                 [weakSelf showPinAlertWithTitle:@"Un Pin Web App" andMessage:@"Please confirm on your device"];
+                                                 [weakSelf showAlertWithTitle:@"Un Pin Web App" andMessage:@"Please confirm on your device"];
                                               }
                                              else
                                              {
