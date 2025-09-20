@@ -366,7 +366,7 @@ NSString *lgeUDAPRequestURI[8] = {
         [self dismissPairingWithSuccess:nil failure:nil];
     }];
 
-    UIAlertAction *okAction = [Uv                               style:UIAlertActionStyleDefault
+    UIAlertAction *okAction = [                               style:UIAlertActionStyleDefault
                                                      handler:^(UIAlertAction * _Nonnull action) {
         NSString *pairingCode = alert.textFields.firstObject.text;
         [self pairWithData:pairingCode];
