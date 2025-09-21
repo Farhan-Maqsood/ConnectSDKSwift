@@ -83,7 +83,7 @@ end
     sp.source_files = "#{cast_dir}/*.{h,m}"
     sp.exclude_files = "#{cast_dir}/*Tests/**/*"
     sp.private_header_files = "#{cast_dir}/**/*_Private.h"
-    sp.dependency "google-cast-sdk", "2.7.1"
+    sp.dependency "google-cast-sdk", "3.5.6"
     sp.framework = "GoogleCast"
     sp.xcconfig = {
       "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/google-cast-sdk/GoogleCastSDK-2.7.1-Release",
