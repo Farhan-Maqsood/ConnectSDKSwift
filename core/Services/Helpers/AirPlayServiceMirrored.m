@@ -62,6 +62,8 @@
 @property (nonatomic) AirPlayWebAppSession *activeWebAppSession;
 @property (nonatomic) ServiceSubscription *playStateSubscription;
 
+@property (nonatomic, strong) UIAlertController *connectingAlertController;
+
 @end
 
 @implementation AirPlayServiceMirrored
@@ -101,29 +103,38 @@
         
         [self checkScreenCount];
         
-        //        NSString *title = [[NSBundle mainBundle] localizedStringForKey:@"Connect_SDK_AirPlay_Mirror_Title" value:@"Mirroring Required" table:@"ConnectSDK"];
-        //        NSString *message = [[NSBundle mainBundle] localizedStringForKey:@"Connect_SDK_AirPlay_Mirror_Description" value:@"Enable AirPlay mirroring to connect to this device" table:@"ConnectSDK"];
-        //        NSString *ok = [[NSBundle mainBundle] localizedStringForKey:@"Connect_SDK_AirPlay_Mirror_OK" value:@"OK" table:@"ConnectSDK"];
-        //        NSString *cancel = [[NSBundle mainBundle] localizedStringForKey:@"Connect_SDK_AirPlay_Mirror_Cancel" value:@"Cancel" table:@"ConnectSDK"];
-        //
-        //        _connectingAlertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancel otherButtonTitles:ok, nil];
-        //
-        //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hScreenConnected:) name:UIScreenDidConnectNotification object:nil];
-        //
-        //        if (self.service && self.service.delegate && [self.service.delegate respondsToSelector:@selector(deviceService:pairingRequiredOfType:withData:)])
-        //            dispatch_on_main(^{ [self.service.delegate deviceService:self.service pairingRequiredOfType:DeviceServicePairingTypeAirPlayMirroring withData:_connectingAlertView]; });
+                NSString *title = [[NSBundle mainBundle] localizedStringForKey:@"Connect_SDK_AirPlay_Mirror_Title" value:@"Mirroring Required" table:@"ConnectSDK"];
+                NSString *message = [[NSBundle mainBundle] localizedStringForKey:@"Connect_SDK_AirPlay_Mirror_Description" value:@"Enable AirPlay mirroring to connect to this device" table:@"ConnectSDK"];
+                NSString *ok = [[NSBundle mainBundle] localizedStringForKey:@"Connect_SDK_AirPlay_Mirror_OK" value:@"OK" table:@"ConnectSDK"];
+                NSString *cancel = [[NSBundle mainBundle] localizedStringForKey:@"Connect_SDK_AirPlay_Mirror_Cancel" value:@"Cancel" table:@"ConnectSDK"];
+        
+        _connectingAlertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancel style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            if (self->_connecting) {
+                [self disconnect];
+            }
+        }];
+
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:ok style:UIAlertActionStyleDefault handler:nil];
+
+        [_connectingAlertController addAction:cancelAction];
+        [_connectingAlertController addAction:okAction];
+        
+                if (self.service && self.service.delegate && [self.service.delegate respondsToSelector:@selector(deviceService:pairingRequiredOfType:withData:)])
+                    dispatch_on_main(^{ [self.service.delegate deviceService:self.service pairingRequiredOfType:DeviceServicePairingTypeAirPlayMirroring withData:_connectingAlertController]; });
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hScreenConnected:) name:UIScreenDidConnectNotification object:nil];
         
         // Let delegate know pairing is required, but no alert UI
-        if (self.service && self.service.delegate &&
-            [self.service.delegate respondsToSelector:@selector(deviceService:pairingRequiredOfType:withData:)]) {
-            dispatch_on_main(^{
-                [self.service.delegate deviceService:self.service
-                               pairingRequiredOfType:DeviceServicePairingTypeAirPlayMirroring
-                                            withData:nil];
-            });
-        }
+//        if (self.service && self.service.delegate &&
+//            [self.service.delegate respondsToSelector:@selector(deviceService:pairingRequiredOfType:withData:)]) {
+//            dispatch_on_main(^{
+//                [self.service.delegate deviceService:self.service
+//                               pairingRequiredOfType:DeviceServicePairingTypeAirPlayMirroring
+//                                            withData:nil];
+//            });
+//        }
         
     }
 }
@@ -151,8 +162,8 @@
         _connectTimer = nil;
     }
 
-//    if (_connectingAlertView)
-//        dispatch_on_main(^{ [_connectingAlertView dismissWithClickedButtonIndex:0 animated:NO]; });
+    if (_connectingAlertController)
+         dispatch_on_main(^{ [self->_connectingAlertController dismissViewControllerAnimated:NO completion:nil]; });
 
     if (self.service && self.service.delegate && [self.service.delegate respondsToSelector:@selector(deviceService:disconnectedWithError:)])
         [self.service.delegate deviceService:self.service disconnectedWithError:nil];
@@ -201,8 +212,8 @@
         _connecting = NO;
         _connected = YES;
 
-//        if (_connectingAlertView)
-//            dispatch_on_main(^{ [_connectingAlertView dismissWithClickedButtonIndex:1 animated:NO]; });
+        if (_connectingAlertController)
+            dispatch_on_main(^{ [self->_connectingAlertController dismissViewControllerAnimated:NO completion:nil]; });
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hScreenDisconnected:) name:UIScreenDidDisconnectNotification object:nil];
 

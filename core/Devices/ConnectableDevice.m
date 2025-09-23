@@ -450,15 +450,40 @@
 {
     if (self.delegate)
     {
-        if ([self.delegate respondsToSelector:@selector(connectableDevice:service:pairingRequiredOfType:withData:)])
-            dispatch_on_main(^{ [self.delegate connectableDevice:self service:service pairingRequiredOfType:pairingType withData:pairingData]; });
+        if ([self.delegate respondsToSelector:@selector(connectableDevice:service:pairingRequiredOfType:withData:)]) {
+            dispatch_on_main(^{
+                [self.delegate connectableDevice:self service:service pairingRequiredOfType:pairingType withData:pairingData];
+            });
+        }
         else
         {
-            if (pairingType == DeviceServicePairingTypeAirPlayMirroring)
-                [(UIAlertView *)pairingData show];
+            if (pairingType == DeviceServicePairingTypeAirPlayMirroring) {
+                dispatch_on_main(^{
+                    UIViewController *topVC = [self topViewController];
+                    if (topVC && [pairingData isKindOfClass:[UIAlertController class]]) {
+                        [topVC presentViewController:pairingData animated:YES completion:nil];
+                    }
+                });
+            }
         }
     }
 }
+
+- (UIViewController *)topViewController {
+    UIViewController *topViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    while (topViewController.presentedViewController) {
+        topViewController = topViewController.presentedViewController;
+    }
+    
+    // Handle cases where keyWindow might be nil
+    if (!topViewController) {
+        topViewController = [[UIApplication sharedApplication].windows firstObject].rootViewController;
+    }
+    
+    return topViewController;
+}
+
 
 - (void)deviceServicePairingSuccess:(DeviceService *)service
 {
